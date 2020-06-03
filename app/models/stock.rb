@@ -8,4 +8,3 @@ class Stock < ApplicationRecord
   end
 
 end
-#
