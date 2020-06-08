@@ -4,8 +4,8 @@
 
 <% if @stock %>
 <div class="card card-header results-block col-sm-9">
-  <strong>Symbol: </strong><%= @stock.ticker %>
-  <strong>Name: </strong><%= @stock.name %>
-  <strong>Price: </strong><%= @stock.last_price %>
+  <strong class="space-between">Symbol: </strong><%= @stock.ticker %>
+  <strong class="space-between">Name: </strong><%= @stock.name %>
+  <strong class="space-between">Price: </strong><%= @stock.last_price %>
 </div>
 <% end %>
