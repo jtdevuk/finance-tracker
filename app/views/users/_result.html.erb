@@ -9,15 +9,14 @@
     <strong class="space-between">Price: </strong><%= @stock.last_price %>
     <% if current_user.can_track_stock?(@stock.ticker) %>
       <%= link_to "Add to portfolio", user_stocks_path(user: current_user, ticker: @stock.ticker),
-                                      class: "btn btn-success btn-xs right-align", method: :post %>
+          class: "btn btn-success btn-xs right-align", method: :post %>
     <% else %>
-      <span class="badge badge-secondary">
+      <span class="badge badge-secondary right-align">
         You are already tracking
         <% if !current_user.under_stock_limit? %>
-        10 stocks
-        <% end %>
-        <% if current_user.stock_already_tracked?(@stock.ticker) %>
-        this stock
+          10 stocks
+        <% elsif current_user.stock_already_tracked?(@stock.ticker) %>
+          this stock
         <% end %>
     <% end %>
   </div>
