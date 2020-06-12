@@ -1,0 +1,20 @@
+<div class="results-block">
+  <%= render 'layouts/messages' %>
+</div>
+
+<% if @friends %>
+  <div class="card card-header results-block col-sm-9">
+    <table class="col-md-12">
+      <tbody>
+        <% @friends.each do |friend| %>
+          <tr>
+            <td><strong class="space-between">Name: </strong><%= friend.full_name %></td>
+            <td><strong class="space-between">Email: </strong><%= friend.email %></td>
+            <td><%= link_to "View profile", '#', class: "btn btn-sm btn-success" %>
+            <%= link_to "Follow friend", "#", class: "btn btn-success btn-sm right-align", method: :post %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>    
+  </div>
+<% end %>
