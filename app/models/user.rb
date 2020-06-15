@@ -56,4 +56,5 @@ end
     def not_friends(friend_id)
       !self.friends.where(id: friend_id).exists?
     end
+    
   end
